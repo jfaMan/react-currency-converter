@@ -8,7 +8,7 @@ const App = () => {
   const [selectedCurrency, setSelectedCurrency] = useState('AUD');
   const [result, setResult] = useState('');
   useEffect(() => {
-    fetch('http://api.exchangeratesapi.io/v1/latest?access_key=4f1daa95f33a32d1c3f5a99b3d7c4ecf')
+    fetch('https://free.currconv.com/api/v7/convert?q=USD_AUD&compact=ultra&apiKey=12c4f2cfb0dacfe008d3')
       .then(response => response.json())
       .then(data => {
         console.log(data);
