@@ -29,7 +29,6 @@ const Converter = () => {
               </select>
             </div>
             <div className="col-sm-1">
-
             </div>
             <div className="col-sm-3">
               <select className="input" name="currencies" id="currencies">
