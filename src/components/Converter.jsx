@@ -1,4 +1,5 @@
 import React from 'react';
+import DropdownList from './DropdownList';
 
 const Converter = (props) => {
 
@@ -44,16 +45,12 @@ const Converter = (props) => {
               />
             </div>
             <div className="col-sm-3">
-              <select className="input" name="currencies" id="currencies">
-                {currencies.map(currency => <option value={currency}>{currency}</option> )}
-              </select>
+              <DropdownList currencies={currencies} />
             </div>
             <div className="col-sm-1">
             </div>
             <div className="col-sm-3">
-            <select className="input" name="currencies" id="currencies">
-                {currencies.map(currency => <option value={currency}>{currency}</option> )}
-              </select>
+              <DropdownList currencies={currencies} />
             </div>
           </div>
         </div>
