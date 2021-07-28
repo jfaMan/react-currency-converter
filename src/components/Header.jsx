@@ -3,8 +3,13 @@ import React from 'react';
 const Header = () => {
   return (
     <div className="header">
-      <img src="logo192.png" alt="React Logo" />
-      <h1>React Currency Converter</h1>
+      <div className="header-top">
+        <img src="logo192.png" alt="React Logo" />
+      </div>
+      <div className="header-right">
+        <h1>React Currency Converter</h1>
+        <p>Check exchange rates with the power of React</p>
+      </div>
     </div>
   );
 };
