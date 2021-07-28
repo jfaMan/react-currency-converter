@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Converter = () => {
+const Converter = (props) => {
+  const { handleSubmit } = props;
   return (
     <div className="converter">
       <div>
@@ -37,15 +38,12 @@ const Converter = () => {
             </div>
           </div>
         </div>
-        <div className="converter-bottom">
+        <form onSubmit={handleSubmit} className="converter-bottom">
           <div className="results">
             <h4>Results go here</h4>
           </div>
-          <button className="btn btn-primary">Convert</button>
-        </div>
-      </div>
-      <div>
-
+          <button className="btn btn-primary" type="submit">Convert</button>
+        </form>
       </div>
     </div>
   );

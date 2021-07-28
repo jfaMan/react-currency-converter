@@ -17,10 +17,16 @@ const App = () => {
       });
   }, []);
 
+  const handleSubmit = () => {
+    return (
+      alert('TESTING')
+    );
+  };
+
   return (
     <div>
       <Header />
-      <Converter />
+      <Converter handleSubmit={handleSubmit} />
     </div>
   );
 };
