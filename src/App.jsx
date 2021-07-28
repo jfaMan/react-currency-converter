@@ -8,15 +8,14 @@ const App = () => {
   const [selectedTo, setSelectedTo] = useState('');
   const [result, setResult] = useState('');
   const [currencies, setCurrencies] = useState(['AUD', 'USD', 'GBP', 'JPY', 'EUR']);
-  useEffect(() => {
-    fetch('https://free.currconv.com/api/v7/convert?q=USD_AUD&compact=ultra&apiKey=12c4f2cfb0dacfe008d3')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        const rate = data;
-        document.querySelector('input').innerHTML = rate;
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('https://free.currconv.com/api/v7/convert?q=USD_AUD&compact=ultra&apiKey=12c4f2cfb0dacfe008d3')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       const rate = data;
+  //       document.querySelector('input').innerHTML = rate;
+  //     });
+  // }, []);
 
   const getNewAmount = (newAmount) => {
       setInputAmount(newAmount);

@@ -16,8 +16,18 @@ const Converter = (props) => {
     }
   };
 
-  const handleSubmit = () => {
-      alert('TESTING');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=12c4f2cfb0dacfe008d3`)
+      .then(response => response.json())
+      .then(data => {
+        const fromTo = `${selectedFrom}_${selectedTo}`;
+        console.log(fromTo);
+        console.log(typeof fromTo);
+        console.log(data.USD_AUD); // TRYING TO GET THIS VALUE
+        console.log(data.fromTo);
+        console.log(`${data}.${fromTo}`);
+      });
   };
 
   return (
@@ -71,7 +81,7 @@ const Converter = (props) => {
         </div>
         <form onSubmit={handleSubmit} className="converter-bottom">
           <div className="results">
-            <h4>Conversion: {selectedFrom} {inputAmount} = {selectedTo}</h4>
+            <h4>Conversion: {selectedFrom} {inputAmount} = {selectedTo} *PENDING*</h4>
           </div>
           <button className="btn btn-primary" type="submit">Convert</button>
         </form>
