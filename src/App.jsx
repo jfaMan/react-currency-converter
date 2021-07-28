@@ -5,7 +5,7 @@ import Converter from './components/Converter';
 const App = () => {
   const [inputAmount, setInputAmount] = useState('');
   const [selectedFrom, setSelectedFrom] = useState('');
-  const [selectedTo, setSelectedTo] = useState('AUD');
+  const [selectedTo, setSelectedTo] = useState('');
   const [result, setResult] = useState('');
   const [currencies, setCurrencies] = useState(['AUD', 'USD', 'GBP', 'JPY', 'EUR']);
   useEffect(() => {
@@ -21,6 +21,11 @@ const App = () => {
   const getNewAmount = (newAmount) => {
       setInputAmount(newAmount);
   };
+
+  const changeSelectedCurrency = (id, currencyValue) => {
+    id === 'selectedFrom' ? setSelectedFrom(currencyValue) : setSelectedTo(currencyValue)
+  };
+
   return (
     <div>
       <Header />
@@ -28,6 +33,9 @@ const App = () => {
         inputAmount={inputAmount}
         getNewAmount={getNewAmount}
         currencies={currencies}
+        selectedFrom={selectedFrom}
+        selectedTo={selectedTo}
+        changeSelectedCurrency={changeSelectedCurrency}
       />
     </div>
   );
