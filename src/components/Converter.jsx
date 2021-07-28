@@ -3,7 +3,7 @@ import DropdownList from './DropdownList';
 
 const Converter = (props) => {
 
-  const { inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency } = props;
+  const { inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result } = props;
 
   const handleChange = (event) => {
     const { value, type, id } = event.target;
@@ -21,12 +21,13 @@ const Converter = (props) => {
     fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=12c4f2cfb0dacfe008d3`)
       .then(response => response.json())
       .then(data => {
-        const fromTo = `${selectedFrom}_${selectedTo}`;
-        console.log(fromTo);
-        console.log(typeof fromTo);
+        calculateConversion(data.USD_AUD * inputAmount);
+        // const fromTo = `${selectedFrom}_${selectedTo}`;
+        // console.log(fromTo);
+        // console.log(typeof fromTo);
         console.log(data.USD_AUD); // TRYING TO GET THIS VALUE
-        console.log(data.fromTo);
-        console.log(`${data}.${fromTo}`);
+        // console.log(data.fromTo);
+        // console.log(`${data}.${fromTo}`);
       });
   };
 
@@ -81,7 +82,7 @@ const Converter = (props) => {
         </div>
         <form onSubmit={handleSubmit} className="converter-bottom">
           <div className="results">
-            <h4>Conversion: {selectedFrom} {inputAmount} = {selectedTo} *PENDING*</h4>
+            <h4>Conversion: {selectedFrom} {inputAmount} = {selectedTo} {result}</h4>
           </div>
           <button className="btn btn-primary" type="submit">Convert</button>
         </form>

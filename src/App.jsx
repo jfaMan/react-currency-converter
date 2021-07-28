@@ -18,11 +18,15 @@ const App = () => {
   // }, []);
 
   const getNewAmount = (newAmount) => {
-      setInputAmount(newAmount);
+    setInputAmount(newAmount);
   };
 
   const changeSelectedCurrency = (id, currencyValue) => {
     id === 'selectedFrom' ? setSelectedFrom(currencyValue) : setSelectedTo(currencyValue)
+  };
+
+  const calculateConversion = (conversion) => {
+    setResult(conversion);
   };
 
   return (
@@ -35,6 +39,8 @@ const App = () => {
         selectedFrom={selectedFrom}
         selectedTo={selectedTo}
         changeSelectedCurrency={changeSelectedCurrency}
+        result={result}
+        calculateConversion={calculateConversion}
       />
     </div>
   );
