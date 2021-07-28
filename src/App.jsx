@@ -4,9 +4,10 @@ import Converter from './components/Converter';
 
 const App = () => {
   const [inputAmount, setInputAmount] = useState('');
-  const [selectedAmount, setSelectedAmount] = useState('');
-  const [selectedCurrency, setSelectedCurrency] = useState('AUD');
+  const [selectedFrom, setSelectedFrom] = useState('');
+  const [selectedTo, setSelectedTo] = useState('AUD');
   const [result, setResult] = useState('');
+  const [currencies, setCurrencies] = useState(['AUD', 'USD', 'GBP', 'JPY', 'EUR']);
   useEffect(() => {
     fetch('https://free.currconv.com/api/v7/convert?q=USD_AUD&compact=ultra&apiKey=12c4f2cfb0dacfe008d3')
       .then(response => response.json())
@@ -18,9 +19,7 @@ const App = () => {
   }, []);
 
   const getNewAmount = (newAmount) => {
-    return (
-      setInputAmount(newAmount)
-    );
+      setInputAmount(newAmount);
   };
   return (
     <div>
@@ -28,6 +27,7 @@ const App = () => {
       <Converter
         inputAmount={inputAmount}
         getNewAmount={getNewAmount}
+        currencies={currencies}
       />
     </div>
   );
