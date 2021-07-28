@@ -1,7 +1,15 @@
 import React from 'react';
 
 const Converter = (props) => {
-  const { handleSubmit } = props;
+  const { inputAmount, getNewAmount } = props;
+  const handleChange = (event) => {
+    const input = event.currentTarget.value;
+    console.log(event.currentTarget.value);
+    getNewAmount(input);
+  };
+  const handleSubmit = () => {
+      alert('TESTING');
+  };
   return (
     <div className="converter">
       <div>
@@ -22,7 +30,14 @@ const Converter = (props) => {
           </div>
           <div className="row">
             <div className="col-sm-5">
-              <input className="input" type="text" id="amount"/>
+              <input
+                className="input"
+                type="text"
+                id="amount"
+                value={inputAmount}
+                placeholder="Enter an amount.."
+                onChange={handleChange}
+              />
             </div>
             <div className="col-sm-3">
               <select className="input" name="currencies" id="currencies">
@@ -40,7 +55,7 @@ const Converter = (props) => {
         </div>
         <form onSubmit={handleSubmit} className="converter-bottom">
           <div className="results">
-            <h4>Results go here</h4>
+            <h4>{inputAmount}</h4>
           </div>
           <button className="btn btn-primary" type="submit">Convert</button>
         </form>

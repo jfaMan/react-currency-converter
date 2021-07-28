@@ -17,16 +17,18 @@ const App = () => {
       });
   }, []);
 
-  const handleSubmit = () => {
+  const getNewAmount = (newAmount) => {
     return (
-      alert('TESTING')
+      setInputAmount(newAmount)
     );
   };
-
   return (
     <div>
       <Header />
-      <Converter handleSubmit={handleSubmit} />
+      <Converter
+        inputAmount={inputAmount}
+        getNewAmount={getNewAmount}
+      />
     </div>
   );
 };
