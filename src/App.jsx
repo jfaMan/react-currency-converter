@@ -7,15 +7,21 @@ const App = () => {
   const [selectedFrom, setSelectedFrom] = useState('');
   const [selectedTo, setSelectedTo] = useState('');
   const [result, setResult] = useState('');
-  const [currencies, setCurrencies] = useState('');
+  const [currencies, setCurrencies] = useState();
+
   useEffect(() => {
-    fetch('https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data.results);
-      // setCurrencies(Object.keys(data.results));
-    }, []);
-  });
+    // const object = JSON.parse(mockApi).results;
+    // const currencyArray = Object.keys(object);
+    // console.log('Rendering from useEffect!')
+    // setCurrencies(currencyArray.sort());
+    // https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3
+    fetch('./currencies.json')
+      .then(response => response.json())
+      .then(data => {
+        const newArray = Object.keys(data.results);
+        setCurrencies(newArray.sort());
+      });
+  }, []);
 
   const getNewAmount = (newAmount) => {
     setInputAmount(newAmount);
@@ -48,4 +54,5 @@ const App = () => {
   );
 };
 // ['AUD', 'USD', 'GBP', 'JPY', 'EUR']
+// https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3
 export default App;
