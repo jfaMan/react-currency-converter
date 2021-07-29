@@ -7,7 +7,7 @@ const App = () => {
   const [selectedFrom, setSelectedFrom] = useState('');
   const [selectedTo, setSelectedTo] = useState('');
   const [result, setResult] = useState('');
-  const [currencies, setCurrencies] = useState();
+  const [currencies, setCurrencies] = useState(['AUD', 'USD', 'GBP', 'JPY', 'EUR'].sort());
 
   useEffect(() => {
     // const object = JSON.parse(mockApi).results;

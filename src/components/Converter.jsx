@@ -29,6 +29,7 @@ const Converter = (props) => {
         // console.log(data.fromTo);
         // console.log(`${data}.${fromTo}`);
       });
+      
   };
 
   return (
@@ -80,15 +81,22 @@ const Converter = (props) => {
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="converter-bottom">
-          <div className="results">
-            <h4>Conversion: {selectedFrom} {inputAmount} = {selectedTo} {result}</h4>
+        <form onSubmit={handleSubmit} className="row converter-bottom">
+          <h4 className="col-sm-2">Conversion:</h4>
+          <h4 className="col-sm-2">{selectedFrom} {inputAmount}</h4>
+          <h4 className="col-sm-1">=</h4>
+          <h4 className="col-sm-2">{selectedTo} {result}</h4>
+          <div className="col-sm-5">
+            <button className="btn btn-primary" type="submit">Convert</button>
           </div>
-          <button className="btn btn-primary" type="submit">Convert</button>
         </form>
       </div>
     </div>
   );
 };
+
+
+{/* <h4 className="col-sm-5">{result ? `${selectedFrom} ${inputAmount} = ${selectedTo} ${result}` : ''}</h4> */}
+
 
 export default Converter;

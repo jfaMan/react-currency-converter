@@ -79,6 +79,24 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 32px;
+  h4 {
+    font-size: 24px;
+  }
+  h4:first-child {
+    text-align: left;
+  }
+  h4:nth-child(2) {
+    text-align: left;
+  }
+  h4:nth-child(3) {
+    text-align: left;
+  }
+  h4:nth-child(4) {
+    text-align: left;
+  }
+  div {
+    text-align: right;
+  }
 }
 
 .converter-main {
@@ -86,6 +104,8 @@ body {
 }
 
 .btn-primary {
-  width: 100px;
-  background-color: #0275d8
+  width: 150px;
+  height: 100%;
+  background-color: #0275d8;
+
 }
