@@ -85,8 +85,8 @@ const Converter = (props) => {
           <h4 className="col-sm-2">Conversion:</h4>
           <h4 className="col-sm-2">{selectedFrom} {inputAmount}</h4>
           <h4 className="col-sm-1">=</h4>
-          <h4 className="col-sm-2">{selectedTo} {result}</h4>
-          <div className="col-sm-5">
+          <h4 className="col-sm-4">{selectedTo} {result}</h4>
+          <div className="col-sm-3">
             <button className="btn btn-primary" type="submit">Convert</button>
           </div>
         </form>
