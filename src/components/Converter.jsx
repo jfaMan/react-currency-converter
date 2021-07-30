@@ -21,15 +21,9 @@ const Converter = (props) => {
     fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=12c4f2cfb0dacfe008d3`)
       .then(response => response.json())
       .then(data => {
-        calculateConversion(data.USD_AUD * inputAmount);
-        // const fromTo = `${selectedFrom}_${selectedTo}`;
-        // console.log(fromTo);
-        // console.log(typeof fromTo);
-        console.log(data.USD_AUD); // TRYING TO GET THIS VALUE
-        // console.log(data.fromTo);
-        // console.log(`${data}.${fromTo}`);
+        const fromTo = `${selectedFrom}_${selectedTo}`;
+        calculateConversion(data[fromTo] * inputAmount);
       });
-      
   };
 
   return (
@@ -94,9 +88,5 @@ const Converter = (props) => {
     </div>
   );
 };
-
-
-{/* <h4 className="col-sm-5">{result ? `${selectedFrom} ${inputAmount} = ${selectedTo} ${result}` : ''}</h4> */}
-
 
 export default Converter;

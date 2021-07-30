@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Converter from './components/Converter';
+// import data from './currencies.json'; // IF YOU WANT TO USE THE MOCK API
 
 const App = () => {
   const [inputAmount, setInputAmount] = useState('');
   const [selectedFrom, setSelectedFrom] = useState('');
   const [selectedTo, setSelectedTo] = useState('');
   const [result, setResult] = useState('');
-  const [currencies, setCurrencies] = useState(['AUD', 'USD', 'GBP', 'JPY', 'EUR'].sort());
+  const [currencies, setCurrencies] = useState([]);
 
   useEffect(() => {
-    // const object = JSON.parse(mockApi).results;
-    // const currencyArray = Object.keys(object);
-    // console.log('Rendering from useEffect!')
-    // setCurrencies(currencyArray.sort());
-    // https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3
-    fetch('./currencies.json')
+    fetch('https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3')
       .then(response => response.json())
       .then(data => {
         const newArray = Object.keys(data.results);
@@ -53,6 +49,4 @@ const App = () => {
     </div>
   );
 };
-// ['AUD', 'USD', 'GBP', 'JPY', 'EUR']
-// https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3
 export default App;

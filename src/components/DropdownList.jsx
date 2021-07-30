@@ -5,8 +5,7 @@ const DropdownList = (props) => {
   return (
     <select className="input" name="currencies" value={value} onChange={onChange} id={id}>
       <option value="">-- Select a currency --</option>
-      {console.log('Rendering from Dropdown Component!')}
-      {currencies ? currencies.map(currency => <option value={currency} key={currency}>{currency}</option> ) : console.log('Currencies state not yet set!')}
+      {currencies.map(currency => <option value={currency} key={currency}>{currency}</option>)}
     </select>
   );
 };
