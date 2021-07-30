@@ -81,19 +81,20 @@ body {
   padding: 32px;
   h4 {
     font-size: 24px;
+    margin: 8px 0 0 0;
   }
   h4:first-child {
     text-align: left;
   }
-  h4:nth-child(2) {
-    text-align: left;
-  }
-  h4:nth-child(3) {
-    text-align: left;
-  }
-  h4:nth-child(4) {
-    text-align: left;
-  }
+  // h4:nth-child(2) {
+  //   text-align: left;
+  // }
+  // h4:nth-child(3) {
+  //   text-align: left;
+  // }
+  // h4:nth-child(4) {
+  //   text-align: left;
+  // }
   div {
     text-align: right;
   }
@@ -111,20 +112,20 @@ body {
 
 // Responsiveness //
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-    max-width: 1140px;
-  }
-}
-
-
-// @media (min-width: 992px) {
+// @media (min-width: 1200px) {
 //   .container {
-//     width: 970px;
-//     max-width: 960px;
+//     width: 1170px;
+//     max-width: 1140px;
 //   }
 // }
+
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+    max-width: 960px;
+  }
+}
 
 
 // @media (min-width: 768px) {
