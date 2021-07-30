@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faLongArrowAltRight, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import DropdownList from './DropdownList';
 
@@ -86,7 +86,7 @@ const Converter = (props) => {
             />
             </div>
             <div className="col-sm-1 arrow">
-              <FontAwesomeIcon icon={faArrowRight} />
+              <FontAwesomeIcon icon={faChevronRight} />
             </div>
             <div className="col-sm-3">
               <DropdownList
