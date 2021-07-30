@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import DropdownList from './DropdownList';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Converter = (props) => {
 
@@ -79,7 +81,8 @@ const Converter = (props) => {
               id='selectedFrom'
             />
             </div>
-            <div className="col-sm-1">
+            <div className="col-sm-1 arrow">
+              <FontAwesomeIcon icon={faArrowRight} />
             </div>
             <div className="col-sm-3">
               <DropdownList
