@@ -9,7 +9,6 @@ const Converter = (props) => {
     const { value, type, id } = event.target;
     if (type === "text") {
       const input = value;
-      console.log(event.currentTarget.value);
       getNewAmount(input);
     } else {
       changeSelectedCurrency(id, value);
@@ -26,6 +25,23 @@ const Converter = (props) => {
       });
   };
 
+  // let resultDiv;
+  // if (result) {
+  //   resultDiv = (
+  //     <div>
+
+  //     </div>
+  //   )
+  // } else {
+  //   resultDiv = (
+  //     <div>
+  //       <h4 className="col-sm-2"></h4>
+  //       <h4 className="col-sm-2"></h4>
+  //       <h4 className="col-sm-1"></h4>
+  //       <h4 className="col-sm-4"></h4>
+  //     </div>
+  //   )
+  // }
   return (
     <div className="converter">
       <div>
@@ -76,10 +92,7 @@ const Converter = (props) => {
           </div>
         </div>
         <form onSubmit={handleSubmit} className="row converter-bottom">
-          <h4 className="col-sm-2">Conversion:</h4>
-          <h4 className="col-sm-2">{selectedFrom} {inputAmount}</h4>
-          <h4 className="col-sm-1">=</h4>
-          <h4 className="col-sm-4">{selectedTo} {result}</h4>
+          <h4 className="col-sm-9">{result ? `Conversion: ${selectedFrom} ${inputAmount} = ${selectedTo} ${result}` : ''}</h4>
           <div className="col-sm-3">
             <button className="btn btn-primary" type="submit">Convert</button>
           </div>
@@ -88,5 +101,10 @@ const Converter = (props) => {
     </div>
   );
 };
+
+{/* <h4 className="col-sm-2">Conversion:</h4>
+<h4 className="col-sm-2">{selectedFrom} {inputAmount}</h4>
+<h4 className="col-sm-1">=</h4>
+<h4 className="col-sm-4">{selectedTo} {result}</h4> */}
 
 export default Converter;

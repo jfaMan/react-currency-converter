@@ -31,8 +31,6 @@ const App = () => {
     setResult(conversion);
   };
 
-
-
   return (
     <div>
       <Header />
