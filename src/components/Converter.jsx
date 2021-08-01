@@ -20,14 +20,12 @@ const Converter = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (Number(inputAmount)) {
-      fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=12c4f2cfb0dacfe008d3`)
-        .then((response) => { return response.json(); })
-        .then((data) => {
-          const fromTo = `${selectedFrom}_${selectedTo}`;
-          calculateConversion(data[fromTo] * inputAmount);
-        });
-    }
+    fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=12c4f2cfb0dacfe008d3`)
+      .then((response) => { return response.json(); })
+      .then((data) => {
+        const fromTo = `${selectedFrom}_${selectedTo}`;
+        calculateConversion(data[fromTo] * inputAmount);
+      });
   };
   return (
     <div className="converter">
