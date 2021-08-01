@@ -25,8 +25,6 @@ const Converter = (props) => {
           const fromTo = `${selectedFrom}_${selectedTo}`;
           calculateConversion(data[fromTo] * inputAmount);
         });
-    } else {
-      alert('ERROR! Incorrect input type. Please enter numbers only.');
     }
   };
   return (
@@ -36,15 +34,14 @@ const Converter = (props) => {
         <div className="container converter-main">
           <div className="row">
             <div className="col-sm-5">
-              <label htmlFor="amount">Amount</label>
+              <p htmlFor="amount">Amount</p>
             </div>
             <div className="col-sm-3">
-              <label htmlFor="currency-from">From</label>
+              <p htmlFor="currency-from">From</p>
             </div>
-            <div className="col-sm-1">
-            </div>
+            <div className="col-sm-1" />
             <div className="col-sm-3">
-              <label htmlFor="currency-to">To</label>
+              <p htmlFor="currency-to">To</p>
             </div>
           </div>
           <div className="row">
