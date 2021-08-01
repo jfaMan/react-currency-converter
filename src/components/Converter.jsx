@@ -11,7 +11,7 @@ const Converter = (props) => {
   const handleChange = (event) => {
     const { value, type, id } = event.target;
     if (type === 'text') {
-      const input = value;
+      const input = value.replace(/\D/, '');
       getNewAmount(input);
     } else {
       changeSelectedCurrency(id, value);
