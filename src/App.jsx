@@ -12,8 +12,8 @@ const App = () => {
 
   useEffect(() => {
     fetch('https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3')
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => { return response.json(); })
+      .then((data) => {
         const newArray = Object.keys(data.results);
         setCurrencies(newArray.sort());
       });

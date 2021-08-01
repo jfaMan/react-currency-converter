@@ -4,7 +4,9 @@ import React from 'react';
 import DropdownList from './DropdownList';
 
 const Converter = (props) => {
-  const { inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result } = props;
+  const {
+    inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result,
+  } = props;
 
   const handleChange = (event) => {
     const { value, type, id } = event.target;
@@ -20,8 +22,8 @@ const Converter = (props) => {
     event.preventDefault();
     if (Number(inputAmount)) {
       fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=12c4f2cfb0dacfe008d3`)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => { return response.json(); })
+        .then((data) => {
           const fromTo = `${selectedFrom}_${selectedTo}`;
           calculateConversion(data[fromTo] * inputAmount);
         });
