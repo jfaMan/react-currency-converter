@@ -24,7 +24,7 @@ const App = () => {
   };
 
   const changeSelectedCurrency = (id, currencyValue) => {
-    id === 'selectedFrom' ? setSelectedFrom(currencyValue) : setSelectedTo(currencyValue)
+    id === 'selectedFrom' ? setSelectedFrom(currencyValue) : setSelectedTo(currencyValue);
   };
 
   const calculateConversion = (conversion) => {

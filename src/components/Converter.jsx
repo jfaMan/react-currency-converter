@@ -1,15 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faLongArrowAltRight, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import DropdownList from './DropdownList';
 
 const Converter = (props) => {
-
   const { inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result } = props;
 
   const handleChange = (event) => {
     const { value, type, id } = event.target;
-    if (type === "text") {
+    if (type === 'text') {
       const input = value;
       getNewAmount(input);
     } else {
@@ -30,24 +29,6 @@ const Converter = (props) => {
       alert('ERROR! Incorrect input type. Please enter numbers only.')
     }
   };
-
-  // let resultDiv;
-  // if (result) {
-  //   resultDiv = (
-  //     <div>
-
-  //     </div>
-  //   )
-  // } else {
-  //   resultDiv = (
-  //     <div>
-  //       <h4 className="col-sm-2"></h4>
-  //       <h4 className="col-sm-2"></h4>
-  //       <h4 className="col-sm-1"></h4>
-  //       <h4 className="col-sm-4"></h4>
-  //     </div>
-  //   )
-  // }
   return (
     <div className="converter">
       <div>
@@ -79,22 +60,22 @@ const Converter = (props) => {
             </div>
             <div className="col-sm-3">
               <DropdownList
-              onChange={handleChange}
-              currencies={currencies}
-              value={selectedFrom}
-              id='selectedFrom'
-            />
+                onChange={handleChange}
+                currencies={currencies}
+                value={selectedFrom}
+                id="selectedFrom"
+              />
             </div>
             <div className="col-sm-1 arrow">
               <FontAwesomeIcon icon={faChevronRight} />
             </div>
             <div className="col-sm-3">
               <DropdownList
-              onChange={handleChange}
-              currencies={currencies}
-              value={selectedTo}
-              id='selectedTo'
-            />
+                onChange={handleChange}
+                currencies={currencies}
+                value={selectedTo}
+                id="selectedTo"
+              />
             </div>
           </div>
         </div>
@@ -109,9 +90,9 @@ const Converter = (props) => {
   );
 };
 
-{/* <h4 className="col-sm-2">Conversion:</h4>
-<h4 className="col-sm-2">{selectedFrom} {inputAmount}</h4>
-<h4 className="col-sm-1">=</h4>
-<h4 className="col-sm-4">{selectedTo} {result}</h4> */}
+// <h4 className="col-sm-2">Conversion:</h4>
+// <h4 className="col-sm-2">{selectedFrom} {inputAmount}</h4>
+// <h4 className="col-sm-1">=</h4>
+// <h4 className="col-sm-4">{selectedTo} {result}</h4>
 
 export default Converter;
