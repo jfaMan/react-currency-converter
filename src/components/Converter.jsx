@@ -26,7 +26,7 @@ const Converter = (props) => {
           calculateConversion(data[fromTo] * inputAmount);
         });
     } else {
-      alert('ERROR! Incorrect input type. Please enter numbers only.')
+      alert('ERROR! Incorrect input type. Please enter numbers only.');
     }
   };
   return (
