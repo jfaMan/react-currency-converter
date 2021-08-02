@@ -141,6 +141,7 @@ body {
       text-align: center;
       img {
         width: 80px;
+        margin: 0;
       }
     }
    }
@@ -149,6 +150,24 @@ body {
      h2 {
        font-size: 24px;
      }
+    //  .converter-main {
+    //    display: flex;
+    //   div:nth-child(4) {
+    //     order: 1;
+    //   }
+      // div:nth-child(5) {
+      //   order: 2;
+      // }
+      // div:nth-child(6) {
+      //   order: 4;
+      // }
+      // div:nth-child(3) {
+      //   order: 5;
+      // }
+      // div:nth-child(4) {
+      //   order: 7;
+      // }
+    // }
    }
 }
 

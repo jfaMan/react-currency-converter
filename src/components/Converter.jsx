@@ -32,17 +32,17 @@ const Converter = (props) => {
       <div>
         <h2>Enter an amount and select your currencies</h2>
         <div className="container row converter-main">
-          <div className="col-sm-5">
+          <div className="child col-sm-5">
             <p htmlFor="amount">Amount</p>
           </div>
-          <div className="col-sm-3">
+          <div className="child col-sm-3">
             <p htmlFor="currency-from">From</p>
           </div>
-          <div className="col-sm-1" />
-          <div className="col-sm-3">
+          <div className="child col-sm-1" />
+          <div className="child col-sm-3">
             <p htmlFor="currency-to">To</p>
           </div>
-          <div className="col-sm-5">
+          <div className="child col-sm-5">
             <input
               className="input"
               type="text"
@@ -52,7 +52,7 @@ const Converter = (props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="col-sm-3">
+          <div className="child col-sm-3">
             <DropdownList
               onChange={handleChange}
               currencies={currencies}
@@ -60,10 +60,10 @@ const Converter = (props) => {
               id="selectedFrom"
             />
           </div>
-          <div className="col-sm-1 arrow">
+          <div className="child col-sm-1 arrow">
             <FontAwesomeIcon icon={faChevronRight} />
           </div>
-          <div className="col-sm-3">
+          <div className="child col-sm-3">
             <DropdownList
               onChange={handleChange}
               currencies={currencies}
