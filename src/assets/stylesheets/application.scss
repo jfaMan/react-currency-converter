@@ -133,7 +133,7 @@ body {
     width: 100%;
    }
    .header {
-    padding: 30px 0 300px 0;
+    padding: 24px 0 300px 0;
     display: grid;
     h1 {
       font-size: 28px;
@@ -149,7 +149,7 @@ body {
     }
    }
    .converter {
-     top: 224px;
+     top: 220px;
      h2 {
        font-size: 24px;
      }
@@ -164,9 +164,6 @@ body {
   }
   .btn {
     width: 100%;
-   }
-   .converter-bottom {
-     
    }
 }
 @media (min-width: 768px) {
