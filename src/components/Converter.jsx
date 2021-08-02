@@ -31,49 +31,45 @@ const Converter = (props) => {
     <div className="converter">
       <div>
         <h2>Enter an amount and select your currencies</h2>
-        <div className="container converter-main">
-          <div className="row">
-            <div className="col-sm-5">
-              <p htmlFor="amount">Amount</p>
-            </div>
-            <div className="col-sm-3">
-              <p htmlFor="currency-from">From</p>
-            </div>
-            <div className="col-sm-1" />
-            <div className="col-sm-3">
-              <p htmlFor="currency-to">To</p>
-            </div>
+        <div className="container row converter-main">
+          <div className="col-sm-5">
+            <p htmlFor="amount">Amount</p>
           </div>
-          <div className="row">
-            <div className="col-sm-5">
-              <input
-                className="input"
-                type="text"
-                id="amount"
-                value={inputAmount}
-                placeholder="Enter an amount.."
-                onChange={handleChange}
-              />
-            </div>
-            <div className="col-sm-3">
-              <DropdownList
-                onChange={handleChange}
-                currencies={currencies}
-                value={selectedFrom}
-                id="selectedFrom"
-              />
-            </div>
-            <div className="col-sm-1 arrow">
-              <FontAwesomeIcon icon={faChevronRight} />
-            </div>
-            <div className="col-sm-3">
-              <DropdownList
-                onChange={handleChange}
-                currencies={currencies}
-                value={selectedTo}
-                id="selectedTo"
-              />
-            </div>
+          <div className="col-sm-3">
+            <p htmlFor="currency-from">From</p>
+          </div>
+          <div className="col-sm-1" />
+          <div className="col-sm-3">
+            <p htmlFor="currency-to">To</p>
+          </div>
+          <div className="col-sm-5">
+            <input
+              className="input"
+              type="text"
+              id="amount"
+              value={inputAmount}
+              placeholder="Enter an amount.."
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-sm-3">
+            <DropdownList
+              onChange={handleChange}
+              currencies={currencies}
+              value={selectedFrom}
+              id="selectedFrom"
+            />
+          </div>
+          <div className="col-sm-1 arrow">
+            <FontAwesomeIcon icon={faChevronRight} />
+          </div>
+          <div className="col-sm-3">
+            <DropdownList
+              onChange={handleChange}
+              currencies={currencies}
+              value={selectedTo}
+              id="selectedTo"
+            />
           </div>
         </div>
         <form onSubmit={handleSubmit} className="row converter-bottom">
