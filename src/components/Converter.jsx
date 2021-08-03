@@ -73,7 +73,8 @@ const Converter = (props) => {
           </div>
         </div>
         <form onSubmit={handleSubmit} className="row converter-bottom">
-          <h4 className="col-sm-9">{result ? `Conversion: ${selectedFrom} ${inputAmount} = ${selectedTo} ${result}` : ''}</h4>
+          <h4 className="col-sm-12">{result ? `${selectedFrom} ${inputAmount} =` : ''}</h4>
+          <h4 className="col-sm-9">{result ? `${selectedTo} ${result}` : ''}</h4>
           <div className="col-sm-3">
             <button className="btn btn-primary" type="submit">Convert</button>
           </div>
