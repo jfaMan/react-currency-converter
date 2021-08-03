@@ -90,6 +90,12 @@ body {
     text-align: left;
     font-size: 16px;
   }
+  h4:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 12px;
+  }
   // h4:nth-child(2) {
    
   // }
@@ -154,11 +160,19 @@ body {
        padding-top: 0px;
        h4:first-child {
          font-size: 16px;
-         margin-bottom: 8px;
        }
        h4:nth-child(2) {
          font-size: 20px;
-         margin-bottom: 16px;
+         margin-bottom: 12px;
+       }
+       h4:nth-child(3) {
+        font-size: 12px;
+        margin-bottom: 16px;
+      }
+     }
+     .converter-main {
+       div {
+         margin: 4px 0;
        }
      }
     //  .converter-main {
