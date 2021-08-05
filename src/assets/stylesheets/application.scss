@@ -143,6 +143,7 @@ body {
      top: 220px;
      h2 {
        font-size: 20px;
+       display: none;
      }
      .converter-bottom {
        padding-top: 8px;
@@ -162,7 +163,7 @@ body {
      }
      .converter-main {
        display: flex;
-       padding-top: 4px;
+       padding-top: 16px;
        padding-bottom: 0;
        div {
         margin: 4px 0;
