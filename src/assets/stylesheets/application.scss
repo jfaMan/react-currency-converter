@@ -122,9 +122,9 @@ body {
     width: 300px;
     max-width: 320px;
   }
-   .header {
-    padding: 24px 0 300px 0;
-    display: grid;
+  .header {
+  padding: 24px 0 300px 0;
+  display: grid;
     h1 {
       font-size: 28px;
     }
@@ -138,34 +138,37 @@ body {
         margin: 0;
       }
     }
-   }
-   .converter {
-     top: 220px;
-     h2 {
-       font-size: 20px;
-       display: none;
-     }
-     .converter-bottom {
-       padding-top: 8px;
-       padding-bottom: 16px;
-       h4:first-child {
-         font-size: 16px;
-       }
-       h4:nth-child(2) {
-         font-size: 20px;
-         margin-bottom: 12px;
-       }
-       h4:nth-child(3) {
-        font-size: 12px;
-        margin-bottom: 16px;
-        justify-content: center;
+  }
+  .converter {
+    top: 220px;
+    h2 {
+      font-size: 20px;
+      display: none;
+    }
+    .converter-bottom {
+      padding-top: 8px;
+      padding-bottom: 16px;
+      h4:first-child {
+        font-size: 16px;
       }
-     }
-     .converter-main {
-       display: flex;
-       padding-top: 16px;
-       padding-bottom: 0;
-       div {
+      h4:nth-child(2) {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      h4:nth-child(3) {
+      font-size: 12px;
+      margin-bottom: 16px;
+      justify-content: center;
+      }
+    }
+    .converter-main {
+      display: flex;
+      padding-top: 16px;
+      padding-bottom: 0;
+      p {
+      margin-bottom: 0;
+      }
+      div {
         margin: 4px 0;
       }
       div:first-child {
@@ -198,7 +201,7 @@ body {
         order: 2;
       }
     }
-   }
+  }
 }
 
 
