@@ -24,7 +24,9 @@ const Converter = (props) => {
       .then((response) => { return response.json(); })
       .then((data) => {
         const fromTo = `${selectedFrom}_${selectedTo}`;
-        calculateConversion(data[fromTo] * inputAmount);
+        const conversionFull = data[fromTo] * inputAmount;
+        const conversionRounded = Math.round((conversionFull + Number.EPSILON) * 10000) / 10000;
+        calculateConversion(conversionRounded);
       });
   };
   return (
