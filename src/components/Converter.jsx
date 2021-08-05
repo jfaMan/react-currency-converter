@@ -50,7 +50,7 @@ const Converter = (props) => {
               type="text"
               id="amount"
               value={inputAmount}
-              placeholder="Enter an amount.."
+              placeholder="Enter an amount"
               onChange={handleChange}
             />
           </div>
