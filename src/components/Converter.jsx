@@ -76,7 +76,7 @@ const Converter = (props) => {
           </div>
         </div>
         <form onSubmit={handleSubmit} className="row converter-bottom">
-          <h4 className="col-sm-12">{!fetchError ? (result ? `${selectedFrom} ${inputAmount} =` : '') : <i>*API Server is currently down. Please try again later.</i>}</h4>
+          <h4 className="col-sm-12">{!fetchError ? (result ? `${selectedFrom} ${inputAmount} =` : '') : <i>*API server is currently down. Please try again later.</i>}</h4>
           <h4 className="col-sm-5">{result ? `${selectedTo} ${result}` : ''}</h4>
           <h4 className="col-sm-4">{result ? `(1 ${selectedFrom} = ${result / inputAmount} ${selectedTo})` : ''}</h4>
           <div className="col-sm-3">
