@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
 import Converter from './components/Converter';
+import Header from './components/Header';
+
+require('dotenv').config();
 // import data from './currencies.json'; // IF YOU WANT TO USE THE MOCK API
 
 const App = () => {
   const [inputAmount, setInputAmount] = useState('');
+  const [currencies, setCurrencies] = useState([]);
+  const [result, setResult] = useState('');
   const [selectedFrom, setSelectedFrom] = useState('');
   const [selectedTo, setSelectedTo] = useState('');
-  const [result, setResult] = useState('');
-  const [currencies, setCurrencies] = useState([]);
+
+  const api = process.env.API_KEY;
 
   useEffect(() => {
-    fetch('https://free.currconv.com/api/v7/currencies?apiKey=12c4f2cfb0dacfe008d3')
+    fetch(`https://free.currconv.com/api/v7/currencies?apiKey=${api}`)
       .then((response) => { return response.json(); })
       .then((data) => {
         const newArray = Object.keys(data.results);
@@ -43,6 +47,7 @@ const App = () => {
         changeSelectedCurrency={changeSelectedCurrency}
         result={result}
         calculateConversion={calculateConversion}
+        api={api}
       />
     </div>
   );

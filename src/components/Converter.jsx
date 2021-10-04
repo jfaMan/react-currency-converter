@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight,faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import DropdownList from './DropdownList';
 
 const Converter = (props) => {
   const {
-    inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result,
+    inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result, api,
   } = props;
 
   const handleChange = (event) => {
@@ -20,7 +20,7 @@ const Converter = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=12c4f2cfb0dacfe008d3`)
+    fetch(`https://free.currconv.com/api/v7/convert?q=${selectedFrom}_${selectedTo}&compact=ultra&apiKey=${api}`)
       .then((response) => { return response.json(); })
       .then((data) => {
         const fromTo = `${selectedFrom}_${selectedTo}`;
