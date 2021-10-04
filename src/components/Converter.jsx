@@ -5,7 +5,7 @@ import DropdownList from './DropdownList';
 
 const Converter = (props) => {
   const {
-    inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result, api,
+    inputAmount, getNewAmount, currencies, selectedFrom, selectedTo, changeSelectedCurrency, calculateConversion, result, api, fetchError
   } = props;
 
   const handleChange = (event) => {
@@ -29,6 +29,7 @@ const Converter = (props) => {
         calculateConversion(conversionRounded);
       });
   };
+
   return (
     <div className="converter">
       <div>
@@ -75,7 +76,7 @@ const Converter = (props) => {
           </div>
         </div>
         <form onSubmit={handleSubmit} className="row converter-bottom">
-          <h4 className="col-sm-12">{result ? `${selectedFrom} ${inputAmount} =` : ''}</h4>
+          <h4 className="col-sm-12">{!fetchError ? (result ? `${selectedFrom} ${inputAmount} =` : '') : <i>*API Server is currently down. Please try again later.</i>}</h4>
           <h4 className="col-sm-5">{result ? `${selectedTo} ${result}` : ''}</h4>
           <h4 className="col-sm-4">{result ? `(1 ${selectedFrom} = ${result / inputAmount} ${selectedTo})` : ''}</h4>
           <div className="col-sm-3">
