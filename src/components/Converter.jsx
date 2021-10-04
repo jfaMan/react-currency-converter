@@ -80,7 +80,7 @@ const Converter = (props) => {
           <h4 className="col-sm-5">{result ? `${selectedTo} ${result}` : ''}</h4>
           <h4 className="col-sm-4">{result ? `(1 ${selectedFrom} = ${result / inputAmount} ${selectedTo})` : ''}</h4>
           <div className="col-sm-3">
-            <button className="btn btn-primary" type="submit">Convert</button>
+            {!fetchError ? <button className="btn btn-primary" type="submit">Convert</button> : <button disabled className="btn btn-primary" type="submit">Convert</button>}
           </div>
         </form>
       </div>
