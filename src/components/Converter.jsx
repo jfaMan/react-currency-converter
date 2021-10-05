@@ -30,6 +30,18 @@ const Converter = (props) => {
       });
   };
 
+  const errorMessageOrResult = () => {
+    if (fetchError) {
+      return (
+        <i>
+          *API server is currently down. Unable to fetch currencies. Check server status
+          <a href="https://www.currencyconverterapi.com/server-status" target="_blank" rel="noreferrer"> here.</a>
+        </i>
+      );
+    }
+    return result && `${selectedFrom} ${inputAmount} =`;
+  };
+
   return (
     <div className="converter">
       <div>
@@ -76,9 +88,9 @@ const Converter = (props) => {
           </div>
         </div>
         <form onSubmit={handleSubmit} className="row converter-bottom">
-          <h4 className="col-sm-12">{!fetchError ? (result ? `${selectedFrom} ${inputAmount} =` : '') : <i>*API server is currently down. Please try again later.</i>}</h4>
-          <h4 className="col-sm-5">{result ? `${selectedTo} ${result}` : ''}</h4>
-          <h4 className="col-sm-4">{result ? `(1 ${selectedFrom} = ${result / inputAmount} ${selectedTo})` : ''}</h4>
+          <h4 className="col-sm-12">{errorMessageOrResult()}</h4>
+          <h4 className="col-sm-5">{result && `${selectedTo} ${result}`}</h4>
+          <h4 className="col-sm-4">{result && `(1 ${selectedFrom} = ${result / inputAmount} ${selectedTo})`}</h4>
           <div className="col-sm-3">
             {!fetchError ? <button className="btn btn-primary" type="submit">Convert</button> : <button disabled className="btn btn-primary" type="submit">Convert</button>}
           </div>
@@ -87,10 +99,5 @@ const Converter = (props) => {
     </div>
   );
 };
-
-// <h4 className="col-sm-2">Conversion:</h4>
-// <h4 className="col-sm-2">{selectedFrom} {inputAmount}</h4>
-// <h4 className="col-sm-1">=</h4>
-// <h4 className="col-sm-4">{selectedTo} {result}</h4>
 
 export default Converter;
