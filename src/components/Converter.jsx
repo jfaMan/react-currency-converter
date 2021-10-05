@@ -35,7 +35,7 @@ const Converter = (props) => {
       return (
         <i>
           *API server is currently down. Unable to fetch currencies. Check server status
-          <a href="https://www.currencyconverterapi.com/server-status" target="_blank" rel="noreferrer"> here.</a>
+          <a href="https://www.currencyconverterapi.com/server-status" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}> here.</a>
         </i>
       );
     }
