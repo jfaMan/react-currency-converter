@@ -12,7 +12,8 @@ const App = () => {
   const [selectedTo, setSelectedTo] = useState('');
   const [fetchError, setFetchError] = useState(false);
 
-  const api = process.env.API_KEY;
+  const api = process.env.REACT_APP_API_KEY;
+  console.log(process.env);
 
   useEffect(() => {
     fetch(`https://free.currconv.com/api/v7/currencies?apiKey=${api}`)
